@@ -1,0 +1,8 @@
+helm:
+  chart: nfs-subdir-external-provisioner
+  repo: "https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner"
+  values:
+    nfs:
+      server: store5678-nfs.world-co.com
+      path: /volumes
+

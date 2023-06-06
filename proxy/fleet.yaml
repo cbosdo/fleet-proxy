@@ -8,6 +8,8 @@ helm:
         metallb.universe.tf/allow-shared-ip: key-to-share-ip
         metallb.universe.tf/loadBalancerIPs: global.fleet.clusterLabels.proxy-ip
     proxy_fqdn: global.fleet.clusterLabels.proxy-fqdn
+    persistentVolume:
+      storageClass: global.fleet.clusterLabels.storage-class
   valuesFiles:
     - config.yaml
   valuesFrom:
@@ -20,3 +22,4 @@ helm:
 dependsOn:
   - name: proxy-metallb-config
   - name: proxy-proxy-secrets
+  - name: proxy-nfs
